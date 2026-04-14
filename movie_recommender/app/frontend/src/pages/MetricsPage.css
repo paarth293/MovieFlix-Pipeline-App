@@ -1,0 +1,223 @@
+.metrics-page { padding-bottom: 80px; }
+
+.metrics-hero {
+  background: var(--charcoal);
+  padding: 56px 0 48px;
+  border-bottom: 3px solid var(--terracotta);
+}
+
+.metrics-hero__eyebrow {
+  font-family: var(--ff-mono);
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--terracotta);
+  margin-bottom: 12px;
+}
+
+.metrics-hero__title {
+  font-family: var(--ff-heading);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 700;
+  color: var(--cream);
+  margin-bottom: 12px;
+}
+
+.metrics-hero__sub {
+  font-size: 1rem;
+  color: rgba(247,242,232,0.6);
+  max-width: 600px;
+}
+
+.metrics-body {
+  padding-top: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* Loading / error */
+.metrics-loading {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: var(--slate);
+  font-size: 1rem;
+  padding: 32px 0;
+}
+
+.metrics-error {
+  padding: 16px 20px;
+  background: rgba(139,45,26,0.08);
+  border: 1.5px solid rgba(139,45,26,0.25);
+  border-radius: var(--radius-md);
+  color: #8B2D1A;
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.metrics-error code {
+  font-family: var(--ff-mono);
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+/* Charts grid */
+.charts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+/* Pipeline */
+.pipeline-section { }
+
+.pipeline-title {
+  font-family: var(--ff-heading);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--charcoal);
+  margin-bottom: 6px;
+}
+
+.pipeline-sub {
+  font-size: 0.88rem;
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+.pipeline-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.pipeline-card {
+  padding: 26px 22px;
+  background: var(--parchment);
+  border: 1.5px solid var(--cream-dk);
+  border-radius: var(--radius-lg);
+  animation: fadeUp 0.4s ease both;
+  transition: var(--transition);
+}
+
+.pipeline-card:hover {
+  border-color: var(--terracotta);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.pipeline-card__header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.pipeline-icon { font-size: 1.6rem; }
+
+.pipeline-card__title {
+  font-family: var(--ff-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--charcoal);
+}
+
+.pipeline-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.pipeline-list li {
+  font-size: 0.86rem;
+  color: var(--slate);
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.pipeline-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--terracotta);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+/* Mood distribution */
+.mood-dist-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: var(--parchment);
+  border: 1.5px solid var(--cream-dk);
+  border-radius: var(--radius-lg);
+  padding: 28px 26px;
+}
+
+.mood-dist-item {
+  display: grid;
+  grid-template-columns: 1fr 200px auto;
+  align-items: center;
+  gap: 16px;
+}
+
+.mood-dist-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.mood-dist-name {
+  font-family: var(--ff-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--charcoal);
+  min-width: 70px;
+}
+
+.mood-dist-count {
+  font-family: var(--ff-mono);
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.mood-dist-bar {
+  height: 10px;
+  background: var(--cream-dk);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.mood-dist-fill {
+  height: 100%;
+  border-radius: 5px;
+  transition: width 1s ease;
+}
+
+.mood-dist-pct {
+  font-family: var(--ff-mono);
+  font-size: 0.82rem;
+  color: var(--charcoal);
+  font-weight: 600;
+  white-space: nowrap;
+  min-width: 40px;
+  text-align: right;
+}
+
+@media (max-width: 800px) {
+  .charts-grid    { grid-template-columns: 1fr; }
+  .pipeline-grid  { grid-template-columns: 1fr; }
+  .mood-dist-item { grid-template-columns: 1fr; gap: 6px; }
+  .mood-dist-bar  { display: none; }
+}
